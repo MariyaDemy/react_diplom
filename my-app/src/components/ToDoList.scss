@@ -1,0 +1,27 @@
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+.tasklist {
+
+    background-color: rgb(160, 201, 160);
+    color: rgb(92, 91, 91);
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+
+    &__text {
+        word-break: break-word;
+        max-width: 600px;
+        margin: 5px;
+
+    }
+}

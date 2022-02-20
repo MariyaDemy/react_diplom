@@ -1,1 +1,18 @@
 @import './variables.scss';
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+.todo {
+    margin: 0 auto;
+    max-width: 700px;
+
+    &__title {
+        text-align: center;
+        font-size: 36px;
+    }
+
+}

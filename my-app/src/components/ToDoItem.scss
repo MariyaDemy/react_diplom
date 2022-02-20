@@ -1,0 +1,24 @@
+.tasklist {
+
+    &__row {
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__btn_del {
+        color: white;
+        font-weight: bold;
+        background-color: blueviolet;
+        width: 25px;
+        height: 25px;
+        padding: 2.5px;
+        font-size: 10px;
+    }
+
+    &__checkbox {
+        &:checked~p {
+            text-decoration: line-through;
+        }
+    }
+}

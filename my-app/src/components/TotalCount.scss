@@ -1,0 +1,36 @@
+.taskcount {
+
+    margin: 30px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__block {
+        padding: 0 10px 0 10px;
+        font-size: 18px;
+
+    }
+
+    &__inprogress {
+        color: rgb(243, 64, 103);
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__completed {
+        color: rgb(46, 194, 144);
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__btn {
+        margin-left: 20px;
+        width: 150px;
+        height: 56px;
+        padding: 5px;
+        font-size: 16px;
+        color: blueviolet;
+        font-weight: bold;
+        background-color: white;
+    }
+}

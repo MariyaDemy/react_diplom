@@ -1,0 +1,20 @@
+.form {
+
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+
+    &__input {
+        padding: 10px;
+        width: 620px;
+    }
+
+    &__btn {
+        background-color: blueviolet;
+        width: 38px;
+        height: 38px;
+        color: white;
+        font-size: 25px;
+        margin: 0 0 0 20px;
+    }
+}
