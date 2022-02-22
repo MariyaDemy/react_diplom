@@ -3,6 +3,8 @@ import './TotalCount.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { countTodos, selectTodos } from "../store/selectors";
 import { removeAll, removeCompleted } from '../store/index.js';
+// import styled, { keyframes } from 'styled-components';
+// import { bounce } from 'react-animations';
 
 
 const TotalCount = (props) => {
@@ -10,6 +12,9 @@ const TotalCount = (props) => {
     const todos = useSelector(countTodos);
     const todosAll = useSelector(selectTodos);
     const dispatch = useDispatch();
+
+
+    // const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`} infinite`;
 
     const removeTasks = (e) => {
         dispatch(removeAll({}));
@@ -38,5 +43,3 @@ const TotalCount = (props) => {
 };
 
 export default TotalCount;
-
-// tasklist__count">{todos.length}</span>

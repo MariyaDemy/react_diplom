@@ -6,7 +6,7 @@ import { toggleTodo, removeTodo } from '../store/index.js';
 
 
 
-const ToDoItem = ({ id, text, completed }) => {
+const ToDoItem = ({ id, text, completed, name }) => {
 
     const dispatch = useDispatch();
 
@@ -22,8 +22,8 @@ const ToDoItem = ({ id, text, completed }) => {
         <li>
             <div className="tasklist">
                 <div className='tasklist__row'>
-                    <input onClick={toggleCheckbox} className="tasklist__checkbox" type='checkbox' checked={completed}></input>
-                    <p className="tasklist__text">{text}</p>
+                    <input onChange={toggleCheckbox} className="tasklist__checkbox" type='checkbox' checked={completed}></input>
+                    <p className="tasklist__text">{name} {text}</p>
                 </div>
                 <button onClick={removeTask} className="tasklist__btn_del">╳</button>
             </div>

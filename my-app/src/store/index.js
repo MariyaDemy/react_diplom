@@ -1,8 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { addGood, changeGoods, addToDo } from './actions';
-import {ADD, REMOVE, CHANGE} from './actionTypes';
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-
+import { configureStore, createSlice} from '@reduxjs/toolkit';
+import { getInfoAsync} from './actions';
 
 
 export const todoSlice = createSlice({
@@ -10,13 +8,7 @@ export const todoSlice = createSlice({
 	 // A name, used in action types
 	name: 'todos',
 
-	initialState: [
-		{ id: 1, text: 'todo1', completed: false },
-		{ id: 2, text: 'todo2', completed: false },
-		{ id: 3, text: 'todo3', completed: true },
-		{ id: 4, text: 'todo4', completed: false },
-		{ id: 5, text: 'todo5', completed: false },
-	],
+	initialState: [],
 
 	reducers: {
 		addTodo: (state, action) => {
@@ -31,6 +23,7 @@ export const todoSlice = createSlice({
 		toggleTodo: (state, action) => {
 			const i = state.findIndex((item) => item.id === action.payload.id);
 			state[i].completed = action.payload.completed;
+
 		},
 
 		removeTodo: (state, action) => {
@@ -46,12 +39,26 @@ export const todoSlice = createSlice({
 			return state.filter((item) => item.completed === false)
 		}
 	},
+
+	extraReducers: (builder) => {
+		    builder.addCase(getInfoAsync.fulfilled, (state, action) => {
+				state.push(action.payload[1], action.payload[18], action.payload[23])
+		  })
+		}
+
+
 });
 
 
-export const { addTodo, toggleTodo, removeTodo, removeAll, removeCompleted } = todoSlice.actions;
+export const { 
+	addTodo,
+	toggleTodo,
+	removeTodo,
+	removeAll,
+	removeCompleted
 
-//const store = was just default
+ } = todoSlice.actions;
+
 
 export const store = configureStore({
 	reducer: {
