@@ -18,6 +18,7 @@ const App = () => {
                 <ToDoForm></ToDoForm>
                 <ToDoList></ToDoList>
                 <TotalCount></TotalCount>
+
             </div>
         </Provider>
     )
