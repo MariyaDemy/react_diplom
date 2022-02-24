@@ -1,22 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ToDoItem from './ToDoItem';
 import './ToDoList.scss'
 import { useSelector, useDispatch } from "react-redux";
 import { selectTodos } from "../store/selectors";
 import { getInfoAsync } from '../store/actions';
 
+
 const ToDoList = () => {
 
     const dispatch = useDispatch();
-    const todos = useSelector(selectTodos);
+    const todos = useSelector(selectTodos); //state.todos
 
     useEffect(() => {
         dispatch(getInfoAsync());
     }, [dispatch]);
 
-    useEffect(() => {
-        localStorage.setItem("todos", JSON.stringify(todos));
-    }, [todos]);
+
+
+
+    // const [local, setLocal] = useState(
+    //     JSON.parse(localStorage.getItem("tasks")) || []
+    // )
+
+    // useEffect(() => {
+    //     localStorage.setItem("tasks", JSON.stringify(todos));
+    // }, [todos]
+    // );
+
+
+
 
 
 

@@ -6,6 +6,7 @@ import ToDoForm from './components/ToDoForm';
 import ToDoList from './components/ToDoList';
 import TotalCount from './components/TotalCount';
 import ReactDOM from 'react-dom';
+import DateComponent from './components/DateComponent';
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Provider store={store}>
             <div className='todo'>
                 <h1 className="todo__title">To Do List App</h1>
+                <DateComponent></DateComponent>
                 <ToDoForm></ToDoForm>
                 <ToDoList></ToDoList>
                 <TotalCount></TotalCount>

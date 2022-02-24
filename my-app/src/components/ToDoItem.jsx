@@ -23,7 +23,7 @@ const ToDoItem = ({ id, text, completed, name }) => {
             <div className="tasklist">
                 <div className='tasklist__row'>
                     <input onChange={toggleCheckbox} className="tasklist__checkbox" type='checkbox' checked={completed}></input>
-                    <p className="tasklist__text">{name} {text}</p>
+                    <p className="tasklist__text">{name}{text}</p>
                 </div>
                 <button onClick={removeTask} className="tasklist__btn_del">╳</button>
             </div>

@@ -14,6 +14,10 @@ export const getInfoAsync = createAsyncThunk (
 		let response = await fetch('https://api.punkapi.com/v2/beers');
 		if (response.ok) {
 			let result = await response.json();
+			// result[0].completed = false;
+			result.forEach(function(item, index){
+				this[index].completed = false;
+			}, result)
 			return result;
 		}
 	}

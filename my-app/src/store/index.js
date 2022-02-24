@@ -23,7 +23,6 @@ export const todoSlice = createSlice({
 		toggleTodo: (state, action) => {
 			const i = state.findIndex((item) => item.id === action.payload.id);
 			state[i].completed = action.payload.completed;
-
 		},
 
 		removeTodo: (state, action) => {
@@ -42,7 +41,7 @@ export const todoSlice = createSlice({
 
 	extraReducers: (builder) => {
 		    builder.addCase(getInfoAsync.fulfilled, (state, action) => {
-				state.push(action.payload[1], action.payload[18], action.payload[23])
+				state.push(action.payload[13], action.payload[18], action.payload[23])
 		  })
 		}
 
