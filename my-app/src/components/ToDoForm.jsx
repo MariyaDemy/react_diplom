@@ -21,10 +21,17 @@ const ToDoForm = () => {
         }
     }
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' && value) {
+            dispatch(addTodo({ text: value }));
+        }
+    }
+
     return (
         <div className="form">
             <input
                 onChange={handleChange}
+                onKeyPress={handleKeyPress}
                 value={value}
                 placeholder="Add your new todo"
                 className="form__input"
